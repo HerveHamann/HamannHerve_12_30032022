@@ -25,8 +25,7 @@ const CircleGraph = () => {
               background={{ fill: "#fbfbfb" }}
               clockWise
               dataKey="uv"
-
-              //  cornerRadius={"50%"}
+              // cornerRadius={"50%"}
             />
           </RadialBarChart>
         </ResponsiveContainer>

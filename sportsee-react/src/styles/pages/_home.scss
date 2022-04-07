@@ -2,15 +2,29 @@
   height: 92.3vh;
   min-height: 1024px;
   position: relative;
-
-  //note position avec relative/absolute peut changer une fois tous les composants faits(avec des display flex etc)
-  .side-icon-container {
-    width: 259px;
+  .main-container {
     display: flex;
-    flex-direction: column;
-    gap: 39px;
+    flex-direction: row;
+    column-gap: 31px;
     position: absolute;
     top: 325px;
-    right: 90px;
+    left: 226px;
+
+    .side-icon-container {
+      width: 259px;
+      display: flex;
+      flex-direction: column;
+      gap: 39px;
+    }
+    .graf-container {
+      display: flex;
+      flex-direction: column;
+      row-gap: 40px;
+      .sub-container {
+        display: flex;
+        flex-direction: row;
+        column-gap: 30px;
+      }
+    }
   }
 }
