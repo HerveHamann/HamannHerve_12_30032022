@@ -1,34 +1,25 @@
 import React from "react";
-import BarGraph from "../components/BarGraph";
-import CircleGraph from "../components/CircleGraph";
+import { NavLink } from "react-router-dom";
 import Header from "../components/layout/Header";
 import Navbar from "../components/layout/Navbar";
-import LineGraph from "../components/LineGraph";
-import RadarGraph from "../components/RadarGraph";
-import SideIcon from "../components/SideIcon";
 
 const Home = () => {
   return (
     <div className="home">
       <Header />
-
-      <div className="main-container">
-        <div className="graf-container">
-          <BarGraph />
-          <div className="sub-container">
-            <LineGraph />
-            <RadarGraph />
-            <CircleGraph />
-          </div>
-        </div>
-        <div className="side-icon-container">
-          <SideIcon type="Calories" />
-          <SideIcon type="Proteines" />
-          <SideIcon type="Glucides" />
-          <SideIcon type="Lipides" />
+      <div className="main">
+        <Navbar />
+        <div className="link">
+          <NavLink to="/user/12">
+            {" "}
+            <button>Karl </button>
+          </NavLink>
+          <NavLink to="/user/18">
+            {" "}
+            <button> Cecillia</button>
+          </NavLink>
         </div>
       </div>
-      <Navbar />
     </div>
   );
 };
