@@ -51,18 +51,18 @@ const UserPage = () => {
           </div>
           <div className="info-container">
             <div className="graf-container">
-              <BarGraph />
+              <BarGraph userActivity={userActivity} />
               <div className="sub-container">
-                <LineGraph />
-                <RadarGraph />
-                <CircleGraph />
+                <LineGraph userSessions={userSessions} />
+                <RadarGraph userPerformance={userPerformance} kind={userPerformance.kind} />
+                <CircleGraph userData={userData} />
               </div>
             </div>
             <div className="side-icon-container">
-              <SideIcon type="Calories" />
-              <SideIcon type="Proteines" />
-              <SideIcon type="Glucides" />
-              <SideIcon type="Lipides" />
+              <SideIcon type="Calories" amount={userData.keyData.calorieCount} />
+              <SideIcon type="Proteines" amount={userData.keyData.proteinCount} />
+              <SideIcon type="Glucides" amount={userData.keyData.carbohydrateCount} />
+              <SideIcon type="Lipides" amount={userData.keyData.lipidCount} />
             </div>
           </div>
         </div>

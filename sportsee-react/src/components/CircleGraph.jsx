@@ -1,14 +1,14 @@
 import React from "react";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 
-const CircleGraph = () => {
+const CircleGraph = ({ userData }) => {
   const data = [
     {
       uv: 100,
       display: "none",
     },
     {
-      uv: 12,
+      uv: userData.todayScore * 100 || userData.score * 100,
       fill: "#ff0000",
     },
   ];
@@ -30,7 +30,7 @@ const CircleGraph = () => {
           </RadialBarChart>
         </ResponsiveContainer>
         <div className="legend">
-          <div className="scorevalue">12%</div>
+          <div className="scorevalue">{userData.todayScore * 100 || userData.score * 100}%</div>
           <div className="scoretext">
             de votre <br /> objectif
           </div>

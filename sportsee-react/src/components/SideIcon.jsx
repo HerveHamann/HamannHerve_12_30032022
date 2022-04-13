@@ -4,35 +4,25 @@ import glucides from "../assets/img/glucides.svg";
 import lipides from "../assets/img/lipides.svg";
 import protein from "../assets/img/protein.svg";
 
-const SideIcon = ({ type }) => {
-  // travailler avec ça quand y aura les props
-  let imageContentDeux = {
-    calorieCount: calories,
-    proteinCount: protein,
-    carbohydrateCount: glucides,
-    lipidCount: lipides,
+const SideIcon = ({ type, amount }) => {
+  let imageContent = {
+    Calories: calories,
+    Proteines: protein,
+    Glucides: glucides,
+    Lipides: lipides,
   };
+  const ImageRender = (item) => imageContent[item];
+  let renderedImage = ImageRender(type);
+  let units = type === "Calories" ? "kCal" : "g";
 
-  //ancienne version
-  // let imageContent = "";
-  // if (type === "Calories") {
-  //   imageContent = calories;
-  // } else if (type === "Proteines") {
-  //   imageContent = protein;
-  // } else if (type === "Glucides") {
-  //   imageContent = glucides;
-  // } else if (type === "Lipides") {
-  //   imageContent = lipides;
-  // }
-
-  // A FAIRE QUAND ON AURA SORTI LES PROPS DATA
-  // let amountContent = "";
-  // amountContent === caloriesCount ? (amountContent = amountContent + "kCal") : amountContent + "g";
   return (
     <div className="side-icon">
-      <img src={imageContentDeux} alt={type} />
+      <img src={renderedImage} alt={type} />
       <div className="text-content">
-        <span className="amount">1,930kCal</span>
+        <span className="amount">
+          {amount}
+          {units}
+        </span>
         <br />
         <span className="type">{type}</span>
       </div>

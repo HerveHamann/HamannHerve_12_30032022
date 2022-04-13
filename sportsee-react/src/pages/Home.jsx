@@ -12,11 +12,11 @@ const Home = () => {
         <div className="link">
           <NavLink to="/user/12">
             {" "}
-            <button>Karl </button>
+            <button> Karl </button>
           </NavLink>
           <NavLink to="/user/18">
             {" "}
-            <button> Cecillia</button>
+            <button> Cecillia </button>
           </NavLink>
         </div>
       </div>

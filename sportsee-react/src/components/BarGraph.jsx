@@ -51,12 +51,13 @@ const CustomTooltip = ({ active, payload }) => {
   }
   return null;
 };
-const BarGraph = () => {
+const BarGraph = ({ userActivity }) => {
+  console.log(userActivity.sessions);
   return (
     <div className="bar-graph">
       <p>Activité quotidienne</p>
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data} margin={{ top: 24, bottom: 23, left: 32, right: 0 }} barGap={8}>
+        <BarChart data={userActivity.sessions} margin={{ top: 24, bottom: 23, left: 32, right: 0 }} barGap={8}>
           <CartesianGrid vertical={false} strokeDasharray="3 3" />
           <XAxis dataKey="day" tickLine={false} tickFormatter={formatDay} tickMargin={16} />
           <YAxis
