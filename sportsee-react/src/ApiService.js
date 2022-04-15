@@ -1,6 +1,6 @@
 import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from "./MockedData.js";
 
-const path = "http://localhost:3001";
+const path = "http://localhost:3000";
 
 async function getUserData(id) {
   const res = await fetch(`${path}/user/${id}`);

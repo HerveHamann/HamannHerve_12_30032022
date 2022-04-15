@@ -1,9 +1,9 @@
 import React from "react";
 import { RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer } from "recharts";
 import Loader from "./Loader";
-
-const RadarGraph = ({ userPerformance, kind }) => {
-  const TitleChange = (item) => kind[item];
+import propTypes from "prop-types";
+const RadarGraph = ({ userPerformance }) => {
+  const TitleChange = (item) => userPerformance.kind[item];
   const InFrench = {
     cardio: "Cardio",
     energy: "Energie",
@@ -14,7 +14,7 @@ const RadarGraph = ({ userPerformance, kind }) => {
   };
   const TitleFrench = (item) => InFrench[TitleChange(item)];
 
-  if (userPerformance.length === 0 && !kind) {
+  if (userPerformance.data.length === 0) {
     return <Loader />;
   }
   return (
@@ -29,5 +29,7 @@ const RadarGraph = ({ userPerformance, kind }) => {
     </div>
   );
 };
-
+RadarGraph.propTypes = {
+  userPerformance: propTypes.object.isRequired,
+};
 export default RadarGraph;

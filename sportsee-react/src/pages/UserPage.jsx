@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { DataContext } from "../DataContext";
 import { useParams } from "react-router-dom";
 import BarGraph from "../components/BarGraph";
 import CircleGraph from "../components/CircleGraph";
@@ -9,15 +10,16 @@ import Loader from "../components/Loader";
 import RadarGraph from "../components/RadarGraph";
 import SideIcon from "../components/SideIcon";
 
-import { getUserData, getUserActivity, getUserSessions, getUserPerformance } from "../ApiService";
-
 const UserPage = () => {
   const { id } = useParams();
+
+  const dataSeekers = useContext(DataContext);
+  const { getUserData, getUserActivity, getUserSessions, getUserPerformance } = dataSeekers;
 
   const [userData, setUserData] = useState([]);
   const [userActivity, setUserActivity] = useState([]);
   const [userSessions, setUserSessions] = useState([]);
-  const [userPerformance, setUserPerformance] = useState([]);
+  const [userPerformance, setUserPerformance] = useState({ data: [] });
 
   useEffect(() => {
     getUserData(id).then((response) => {
@@ -32,7 +34,7 @@ const UserPage = () => {
     getUserPerformance(id).then((response) => {
       setUserPerformance(response);
     });
-  }, [id]);
+  }, [id, getUserData, getUserActivity, getUserSessions, getUserPerformance]);
 
   if (userData.length === 0) {
     return <Loader />;
@@ -54,7 +56,7 @@ const UserPage = () => {
               <BarGraph userActivity={userActivity} />
               <div className="sub-container">
                 <LineGraph userSessions={userSessions} />
-                <RadarGraph userPerformance={userPerformance} kind={userPerformance.kind} />
+                <RadarGraph userPerformance={userPerformance} />
                 <CircleGraph userData={userData} />
               </div>
             </div>

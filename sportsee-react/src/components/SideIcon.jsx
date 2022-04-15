@@ -3,6 +3,7 @@ import calories from "../assets/img/calories.svg";
 import glucides from "../assets/img/glucides.svg";
 import lipides from "../assets/img/lipides.svg";
 import protein from "../assets/img/protein.svg";
+import propTypes from "prop-types";
 
 const SideIcon = ({ type, amount }) => {
   let imageContent = {
@@ -28,6 +29,11 @@ const SideIcon = ({ type, amount }) => {
       </div>
     </div>
   );
+};
+
+SideIcon.propTypes = {
+  type: propTypes.string.isRequired,
+  amount: propTypes.number.isRequired,
 };
 
 export default SideIcon;
