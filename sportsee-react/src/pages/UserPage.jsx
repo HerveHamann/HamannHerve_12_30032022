@@ -10,6 +10,10 @@ import Loader from "../components/Loader";
 import RadarGraph from "../components/RadarGraph";
 import SideIcon from "../components/SideIcon";
 
+/**
+ * UserPage page
+ * @returns {JSX}
+ */
 const UserPage = () => {
   const { id } = useParams();
 
@@ -17,8 +21,8 @@ const UserPage = () => {
   const { getUserData, getUserActivity, getUserSessions, getUserPerformance } = dataSeekers;
 
   const [userData, setUserData] = useState([]);
-  const [userActivity, setUserActivity] = useState([]);
-  const [userSessions, setUserSessions] = useState([]);
+  const [userActivity, setUserActivity] = useState({ data: [] });
+  const [userSessions, setUserSessions] = useState({ data: [] });
   const [userPerformance, setUserPerformance] = useState({ data: [] });
 
   useEffect(() => {

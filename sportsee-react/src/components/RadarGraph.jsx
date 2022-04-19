@@ -2,7 +2,19 @@ import React from "react";
 import { RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer } from "recharts";
 import Loader from "./Loader";
 import propTypes from "prop-types";
+
+/**
+ *  RadarGraph component
+ * @param {Object} userPerformance
+ * @returns {JSX}
+ */
+
 const RadarGraph = ({ userPerformance }) => {
+  /**
+   * TitleChange transforme numbers in english titles
+   * @param {String} item
+   * @returns string
+   */
   const TitleChange = (item) => userPerformance.kind[item];
   const InFrench = {
     cardio: "Cardio",
@@ -12,6 +24,13 @@ const RadarGraph = ({ userPerformance }) => {
     speed: "Vitesse",
     intensity: "Intensité",
   };
+
+  /**
+   * TitleFrench transform english titles in french
+   * @param {String} item
+   * @returns string
+   */
+
   const TitleFrench = (item) => InFrench[TitleChange(item)];
 
   if (userPerformance.data.length === 0) {

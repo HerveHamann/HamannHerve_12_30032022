@@ -2,7 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Header from "../components/layout/Header";
 import Navbar from "../components/layout/Navbar";
-
+/**
+ * Home page
+ * @returns {JSX}
+ */
 const Home = () => {
   return (
     <div className="home">

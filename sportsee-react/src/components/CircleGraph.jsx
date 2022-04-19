@@ -1,5 +1,12 @@
 import React from "react";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
+import propTypes from "prop-types";
+
+/**
+ * CircleGraph
+ * @param {Oject} userData
+ * @returns {JSX}
+ */
 
 const CircleGraph = ({ userData }) => {
   const data = [
@@ -39,5 +46,7 @@ const CircleGraph = ({ userData }) => {
     </div>
   );
 };
-
+CircleGraph.propTypes = {
+  userData: propTypes.object.isRequired,
+};
 export default CircleGraph;

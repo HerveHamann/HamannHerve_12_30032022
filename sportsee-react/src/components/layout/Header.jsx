@@ -1,6 +1,12 @@
 import React from "react";
 import logo from "../../assets/img/logo.svg";
 import { NavLink } from "react-router-dom";
+
+/**
+ * Header componant
+ * @returns {JSX}
+ */
+
 const Header = () => {
   return (
     <div className="header">

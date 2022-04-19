@@ -1,5 +1,12 @@
 import React from "react";
 import { LineChart, ResponsiveContainer, XAxis, YAxis, Line, Tooltip, Legend } from "recharts";
+import propTypes from "prop-types";
+
+/**
+ * LineGraph component
+ * @param {Object} userSessions
+ * @returns {JSX}
+ */
 
 const LineGraph = ({ userSessions }) => {
   const dayWeek = {
@@ -13,6 +20,13 @@ const LineGraph = ({ userSessions }) => {
   };
   const DayChange = (item) => dayWeek[item];
 
+  /**
+   * CustomTooltip with session duration
+   * @param {Boolean} active
+   * @param {Array} payload
+   * @returns {JSX}
+   */
+
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -23,6 +37,11 @@ const LineGraph = ({ userSessions }) => {
     }
     return null;
   };
+
+  /**
+   * CustomLegend with graph title
+   * @returns {JSX}
+   */
   const CustomLegend = () => {
     return (
       <div>
@@ -48,11 +67,7 @@ const LineGraph = ({ userSessions }) => {
             tickFormatter={DayChange}
           />
 
-          <Tooltip
-            content={<CustomTooltip />}
-            // cursor={{ strokeWidth: 260, stroke: "#ff0000", transform: "translate(-130)" }}
-            cursor={false}
-          />
+          <Tooltip content={<CustomTooltip />} cursor={false} />
           <Legend verticalAlign="top" align="left" content={CustomLegend} />
           <Line
             activeDot={{
@@ -72,6 +87,12 @@ const LineGraph = ({ userSessions }) => {
       </ResponsiveContainer>
     </div>
   );
+};
+
+LineGraph.propTypes = {
+  userSessions: propTypes.object.isRequired,
+  active: propTypes.bool,
+  payload: propTypes.array,
 };
 
 export default LineGraph;

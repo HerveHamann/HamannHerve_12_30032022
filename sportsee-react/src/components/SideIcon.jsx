@@ -5,6 +5,13 @@ import lipides from "../assets/img/lipides.svg";
 import protein from "../assets/img/protein.svg";
 import propTypes from "prop-types";
 
+/**
+ * SideIcon component
+ * @param {string} type
+ * @param {number} amount
+ * @returns {JSX}
+ */
+
 const SideIcon = ({ type, amount }) => {
   let imageContent = {
     Calories: calories,

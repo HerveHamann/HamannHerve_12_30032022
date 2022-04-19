@@ -1,7 +1,14 @@
 import React from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-
+import propTypes from "prop-types";
 const formatDay = (item) => new Date(item).getDate();
+
+/**
+ * CustomTooltip with weight and Kcalories values
+ * @param {Boolean} active
+ * @param {Array} payload
+ * @returns {JSX}
+ */
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -14,6 +21,12 @@ const CustomTooltip = ({ active, payload }) => {
   }
   return null;
 };
+
+/**
+ *  BarGraph component
+ * @param {Object} userActivity
+ * @returns {JSX}
+ */
 const BarGraph = ({ userActivity }) => {
   return (
     <div className="bar-graph">
@@ -65,3 +78,9 @@ const BarGraph = ({ userActivity }) => {
 };
 
 export default BarGraph;
+
+BarGraph.propTypes = {
+  userActivity: propTypes.object.isRequired,
+  active: propTypes.bool,
+  payload: propTypes.array,
+};

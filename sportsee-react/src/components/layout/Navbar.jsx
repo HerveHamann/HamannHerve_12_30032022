@@ -4,6 +4,11 @@ import halticon from "../../assets/img/halticon.svg";
 import swimicon from "../../assets/img/swimicon.svg";
 import yogaicon from "../../assets/img/yogaicon.svg";
 
+/**
+ * Navbar componant
+ * @returns {JSX}
+ */
+
 const Navbar = () => {
   return (
     <div className="navbar">

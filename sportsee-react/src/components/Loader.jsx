@@ -1,4 +1,8 @@
 import React from "react";
+/**
+ * Loader componant
+ * @returns {JSX}
+ */
 
 const Loader = () => {
   return (
