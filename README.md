@@ -28,7 +28,7 @@ NPM
 
 Clone the back end project : [P9-front-end-dashboard](https://github.com/HerveHamann/P9-front-end-dashboard).
 
-Clone the front end project :[Sport See] (https://github.com/HerveHamann/HamannHerve_12_30032022)
+Clone the front end project :[Sport See](https://github.com/HerveHamann/HamannHerve_12_30032022).
 
 Use the **npm install** command to install all the dependencies for the both sides of the project. 
 
