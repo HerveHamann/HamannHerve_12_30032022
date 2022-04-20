@@ -21,28 +21,39 @@ Jsdoc 3.6
 ## Project's Installation
 
 Required:
-Node  
-NPM
+Node 16.14 
+npm 8.3.1
 
 ## Installation
 
+### Back end
+
 Clone the back end project : [P9-front-end-dashboard](https://github.com/HerveHamann/P9-front-end-dashboard).
+
+Use the `npm install` command to install all the dependencies. 
+
+### Front end
 
 Clone the front end project :[Sport See](https://github.com/HerveHamann/HamannHerve_12_30032022).
 
-Use the **npm install** command to install all the dependencies for the both sides of the project. 
+Use the  `npm install` command to install all the dependencies. 
 
 ## Starting
 
+
+### Back end
+
 Run first the back end project by using the commmand:
 
-**npm start**
+`npm start`
 
 The back end will run at port 3000.
 
-Then run the front end project by using the commmand:
+### Front end
 
-**npm start**
+Run the front end project by using the commmand:
+
+`npm start`
 
 The front end will run at port 3001.
 
@@ -50,7 +61,7 @@ The front end will run at port 3001.
 
 You can switch data from API to Mocked data in the DataContext.js file by changing:
 
-**const path = "http://localhost:3000"** to **const path = "http://localhost:3001"**
+`const path = "http://localhost:3000"` to `const path = "http://localhost:3001"`
 
 This will simulate an error to the fetch and use the Mocked data insteed of API data.
 
