@@ -5,6 +5,7 @@ export const DataContext = createContext();
 
 /**
  * DataProvider
+ * @module DataProvider
  * @param {JSX} children
  * @returns 4 fonctions
  */
@@ -14,6 +15,7 @@ export const DataProvider = ({ children }) => {
 
   /**
    * getUserData
+   * @function getUserData
    * @param {number} id
    * @returns userDataMocked||userDataApi
    */
@@ -31,6 +33,7 @@ export const DataProvider = ({ children }) => {
 
   /**
    * getUserActivity
+   * @function getUserActivity
    * @param {number} id
    * @returns userActivityMocked||userActivityApi
    */
@@ -48,6 +51,7 @@ export const DataProvider = ({ children }) => {
 
   /**
    * getUserSessions
+   * @function getUserSessions
    * @param {number} id
    * @returns userSessionsMocked||userSessionsApi
    */
@@ -66,6 +70,7 @@ export const DataProvider = ({ children }) => {
 
   /**
    * getUserPerformance
+   * @function getUserPerformance
    * @param {number} id
    * @returns userPerformanceMocked||userPerformanceApi
    */
